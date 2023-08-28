@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Menu from './src/components/Menu';
+import CalculadorScreen from './src/components/calculator';
+import CalcScreen from './src/components/calc';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Menu">
+        <Stack.Screen name="Menu" options={{ headerShown: false }} component={Menu} />
+        <Stack.Screen name="Calcular"  options={{ headerShown: false }} component={CalculadorScreen} />
+        <Stack.Screen name="Calc"  options={{ headerShown: false }} component={CalcScreen}></Stack.Screen>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
