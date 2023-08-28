@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Menu from './src/components/Menu';
-import CalculadorScreen from './src/components/calculator';
-import CalcScreen from './src/components/calc';
+import Menu from './src/components/menuView/menu';
+import CalculadorScreen from './src/components/calculatorView/calculator';
+import CalcScreen from './src/components/calculatorView/calc';
 
 const Stack = createNativeStackNavigator();
 
